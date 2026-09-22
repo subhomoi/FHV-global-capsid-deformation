@@ -1,7 +1,16 @@
-FHV Supplementary Code Package
+FHV Supplementary Code
+======================
 
-scripts/FHV_global_capsid_deformation_analysis.py
-scripts/FHV_global_deformation_figure.py
-README.md
-requirements.txt
-Code_Availability.txt
+Repository: FHV-global-capsid-deformation
+
+Files:
+- README.md
+- LICENSE
+- requirements.txt
+- MANIFEST.txt
+- scripts/FHV_global_capsid_deformation_analysis.py
+- scripts/FHV_global_deformation_figure.py
+- scripts/electrostatic_analysis.py
+- scripts/plot_inter_subunit_contact_summary.py
+
+No structural coordinate files are included.

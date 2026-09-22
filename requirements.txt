@@ -1,6 +1,6 @@
 numpy
 scipy
-biopython
 pandas
-matplotlib
+biopython
 plotly
+matplotlib

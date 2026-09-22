@@ -1,60 +1,50 @@
-# FHV Global Capsid Deformation Analysis
+# FHV Global Capsid Deformation
 
-## Purpose
-This code package contains Python scripts used to quantify global geometrical
-differences between the native FHV capsid structure and an early-disassembly
-structure and to generate the associated deformation figure.
+Python scripts for structural, electrostatic, and inter-subunit interface analysis of the FHV capsid during disassembly.
 
-## Input structures
-Place the following files in the working directory:
-- `4ftb_flat2.pdb` — native FHV structure
-- `int_flat2.pdb` — early-disassembly structure
+## Repository contents
 
-The structures are assumed to have already been structurally aligned.
+- `scripts/FHV_global_capsid_deformation_analysis.py` — global geometrical deformation analysis of the native and early-disassembly FHV structures.
+- `scripts/FHV_global_deformation_figure.py` — publication-style figure generation from the deformation-analysis output.
+- `scripts/electrostatic_analysis.py` — PROPKA-based analysis of acidic-residue protonation changes in 4FTB between pH 7.0 and pH 5.5.
+- `scripts/plot_inter_subunit_contact_summary.py` — publication-style BC–HI inter-subunit interface summary figure using precomputed interface measurements.
 
-## Analysis
+## Requirements
+
+Python 3.9+ and the packages listed in `requirements.txt`. The electrostatic analysis additionally requires PROPKA 3.x with the `propka3` executable available on `PATH`.
+
+## Electrostatic analysis
+
 Run:
 
 ```bash
-python scripts/FHV_global_capsid_deformation_analysis.py
+python scripts/electrostatic_analysis.py
 ```
 
-The analysis calculates:
-- global C-alpha displacement
-- radial expansion/contraction
-- tangential deformation
-- angular reorientation
-- global radius distributions
-- chain/subunit centroid movement
-- chain-chain interface changes
-- native contact loss
-- residues with the largest deformation
+Defaults reproduce the supplied analysis: PDB `4FTB`, pH 7.0 versus pH 5.5, and a minimum net protonation gain of 40 percentage points. The output is `4FTB_major_neutralization_sites.csv`.
 
-The analysis is geometric and does not calculate mechanical strain energy.
+## BC–HI interface figure
 
-## Figure generation
-After the analysis has produced
-`FHV_Global_Deformation_per_residue.csv`, run:
+Run:
 
 ```bash
-python scripts/FHV_global_deformation_figure.py
+python scripts/plot_inter_subunit_contact_summary.py
 ```
 
-This generates PNG and PDF versions of the radial-expansion and
-angular-deformation figure.
+The figure compares the native 4FTB/ugf2 interface with the early-disassembly 9LZL/uge6 interface.
 
-## Dependencies
-Recommended Python packages:
+**Important:** this script is a figure-generation script. It does not independently calculate interface area, salt bridges, hydrogen bonds, or non-bonded contacts from coordinate files; the precomputed values used for the manuscript figure are explicitly defined in the script.
 
-```text
-numpy
-scipy
-biopython
-pandas
-matplotlib
-plotly
-```
+## Reproducibility
 
-Use the package versions recorded in the computational environment used to
-generate the manuscript results.
+The global deformation analysis assumes that the input structures have been aligned before geometrical comparison, as described in the manuscript methods. Structural coordinates should be obtained from the corresponding public structural database entries cited in the manuscript.
 
+## Code availability
+
+The custom Python scripts used for structural, electrostatic, and inter-subunit interface analyses of the FHV capsid during disassembly are available at:
+
+https://github.com/subhomoi/FHV-global-capsid-deformation
+
+## Citation
+
+Please cite the associated FHV capsid-disassembly publication when using these scripts.
