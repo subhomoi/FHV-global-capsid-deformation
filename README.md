@@ -58,11 +58,3 @@ plotly
 Use the package versions recorded in the computational environment used to
 generate the manuscript results.
 
-## Reproducibility
-The input PDB structures and the exact software/package versions used for the
-reported analysis should be archived together with the code repository.
-Output CSV files may also be provided as supplementary data where appropriate.
-
-## Suggested citation in the manuscript
-Custom Python scripts used for global geometrical deformation analysis and
-figure generation are available as supplementary computational resources.
