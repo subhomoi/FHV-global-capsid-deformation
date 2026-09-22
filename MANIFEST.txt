@@ -1,0 +1,7 @@
+FHV Supplementary Code Package
+
+scripts/FHV_global_capsid_deformation_analysis.py
+scripts/FHV_global_deformation_figure.py
+README.md
+requirements.txt
+Code_Availability.txt
