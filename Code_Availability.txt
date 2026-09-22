@@ -1,8 +1,0 @@
-CODE AVAILABILITY — SUGGESTED MANUSCRIPT TEXT
-
-Custom Python scripts used for global geometrical deformation analysis of the
-FHV capsid and generation of the associated figures are provided as
-supplementary computational resources. The scripts quantify Cα displacement,
-radial and tangential deformation, angular reorientation, chain-level movement
-and inter-subunit contact changes between the native and early-disassembly
-structures.
